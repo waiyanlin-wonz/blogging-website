@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WonxBlog</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Primary Meta Tags -->
+  <title>Wonxblog</title>
+  <meta name="title" content="Wonxblog" />
+  <meta name="description" content="seek knowledge with Wonxblog" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metatags.io/" />
+  <meta property="og:title" content="Wonxblog" />
+  <meta property="og:description" content="seek knowledge with Wonxblog" />
+  <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+</head>
+
+<body>
+  <div class="">
+    <!-- navbar -->
+    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary fixed-top mb-5"
+      data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center p-0" href="#">
+          <i class="bi bi-cup-hot me-1"></i>
+          <span class="fs-4">Wonx</span>
+        </a>
+
+        <!-- logOut -->
+        <div class="ms-auto d-none" id="logOut">
+          <button class="btn btn-outline-primary" id="Create" type="submit" data-bs-target="#modalForNewPost"
+            data-bs-toggle="modal">Create New Post</button>
+          <button class="btn btn-outline-primary" id="logOutBtn" type="submit" data-bs-target="#offcanvasRight">Log
+            Out</button>
+        </div>
+
+        <div class="ms-auto" id="afterRegister">
+          <!-- login -->
+          <button class="btn btn-outline-primary " id="login" type="submit" data-bs-toggle="offcanvas"
+            data-bs-target=".offcanvasLogin" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="Tooltip on bottom" data-bs-title="if you have an account, please log in">
+            Log In</button>
+
+          <!-- register -->
+          <button class="btn btn-outline-primary " id="register" type="submit" data-bs-toggle="offcanvas"
+            data-bs-target=".offcanvasRegister">Register</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- offcanvas for login-->
+    <div class="offcanvas offcanvas-end offcanvasLogin" tabindex="-1" id="offcanvasRight">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Log In Here</h5>
+        <button id="btnClose" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container">
+          <form id="formLogin">
+            <div class="form-floating mb-2">
+              <input id="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                name="loginEmail">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input id="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                name="loginPassword">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <small class="text-danger d-none" id="loginNotice">This account doesn't exist.</small>
+            <button class="btn btn-dark w-100 py-2" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-body-secondary">©wonxblog</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas for register-->
+    <div class="offcanvas offcanvas-end offcanvasRegister" tabindex="-1" id="offcanvasRight">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Register Here</h5>
+        <button id="btnClose" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container">
+          <form id="formRegister">
+            <div class="form-floating mb-2">
+              <input id="text" type="text" class="form-control" id="floatingInput" placeholder="Name" name="loginName">
+              <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input id="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                name="loginEmail">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input id="password" type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                name="loginPassword">
+              <label for="floatingPassword">Password</label>
+            </div>
+            <button class="btn btn-dark w-100 py-2" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-body-secondary">©wonxblog</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- article -->
+  <main class="my-5 paddingTop-50" id="article">
+
+  </main>
+
+  <!-- modal for new post  -->
+  <div class="modal fade" id="modalForNewPost">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5"><i class="bi bi-envelope-open"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- form in modal  -->
+        <div class="modal-body">
+          <form id="addPostform" method="post">
+            <h1 class="h3 mb-3 fw-normal">Lets upload your ideas</h1>
+
+            <div class="form-floating">
+              <input type="text" class="form-control" id="createPostTitle" placeholder="Write eye-catching title">
+              <label for="createPostTitle">Title</label>
+            </div>
+            <div>
+              <textarea name="" cols="30" rows="5" class="form-control" id="createPostContent"
+                placeholder="write your creativity"></textarea>
+            </div>
+            <div id="createImg" class="my-2 text-center">
+              <img src="" class="uplodedImg img-size" alt="">
+            </div>
+            <div class="my-2">
+              <!-- to make clicking button equal to clicking input file  -->
+              <input type="file" id="createImgFile" class="d-none">
+              <Button type="button" class="btn btn-dark" id="createImgFileBtn"><i class="bi bi-plus"></i><i
+                  class="bi bi-image"></i></Button>
+            </div>
+            <button class="btn btn-dark w-100 py-2" type="submit">Upload your content</button>
+            <p class="mt-5 mb-3 text-body-secondary">©wonxblog</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal for edit -->
+  <div class="modal" tabindex="-1" id="modalForEdit">
+    <div class="modal-dialog  modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <input type="text" class="modal-title w-100 border-0" id="modalEditTitle">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="w-100 border-0 mb-3" id="modalEditContent">
+          <small>click exsited photo to change another one!</small>
+          <div class="d-flex justify-content-center ">
+            <!-- to make clicking imgage equal to clicking input file then replace new image -->
+            <img src="" class="img-size mt-2" alt="" id="modalEditImg">
+            <input type="file" name="" id="modalEditImgFile" class="d-none">
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-dark" id="deleteArticle" disabled>Delete</button>
+          <button type="button" class="btn btn-dark" id="saveChange" disabled>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/landing-page.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./node_modules/moment/min/moment.min.js"></script>
+</body>
+
+</html>

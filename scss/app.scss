@@ -1,0 +1,15 @@
+
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+$primary: rgb(253, 253, 253);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.paddingTop-50{
+    padding-top: 50px;
+}
+
+.img-size{
+    width: 150px;
+    height: 150px;
+}
